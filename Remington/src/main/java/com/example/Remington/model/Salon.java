@@ -22,5 +22,5 @@ public class Salon {
     @Column(nullable = false ,length = 245)
     private String descripcion;
     @Column(nullable = false ,length = 245)
-    private String estado;   
+    private String estado_salon;
 }

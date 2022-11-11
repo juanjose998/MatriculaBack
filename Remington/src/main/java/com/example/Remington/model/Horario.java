@@ -1,12 +1,7 @@
 package com.example.Remington.model;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,5 +20,9 @@ public class Horario {
     @Column(nullable = false ,length = 245)
     private Date horaFinal;
     @Column(nullable = false ,length = 245)
-    private String dia;   
+    private String dia;
+    @ManyToOne
+    @JoinColumn(name="id_salon")
+    private Salon salon;
 }
+

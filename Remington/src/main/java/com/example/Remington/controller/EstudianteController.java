@@ -45,11 +45,16 @@ public class EstudianteController {
     @PutMapping("/actualizar/{id}")
     public Estudiante actualizar(@RequestBody Estudiante estudiante ,@PathVariable Integer id){
         Estudiante estudianteActual = estudianteService.findById(id);
-        estudianteActual.setNombre(estudiante.getNombre());
-        estudianteActual.setApellido(estudiante.getApellido());
+        estudianteActual.setPrimer_nombre(estudiante.getPrimer_nombre());
+        estudianteActual.setSegundo_nombre(estudiante.getSegundo_nombre());
+        estudianteActual.setPrimer_apellido(estudiante.getPrimer_apellido());
+        estudianteActual.setSegundo_apellido(estudiante.getSegundo_apellido());
         estudianteActual.setNumIdentificacion(estudiante.getNumIdentificacion());
         estudianteActual.setTipoIdentificacion(estudiante.getTipoIdentificacion());
-        estudianteActual.setEstado(estudiante.getEstado());
+        estudianteActual.setEstado_academico(estudiante.getEstado_academico());
+        estudianteActual.setEstado_matricula(estudiante.getEstado_matricula());
+        estudianteActual.setPrograma(estudiante.getPrograma());
+        estudianteActual.setJornada(estudiante.getJornada());
         estudianteActual.setTelefono(estudiante.getTelefono());
         estudianteActual.setCorreoElectronico(estudiante.getCorreoElectronico());
         return estudianteService.saveEstudiante(estudianteActual);

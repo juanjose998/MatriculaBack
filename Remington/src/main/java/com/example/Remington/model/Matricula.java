@@ -22,12 +22,21 @@ public class Matricula implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int  idMatricula;
-    private Date fecha;
+    private Date fecha_matricula;
     private int semestre;
-    private int cantidadCredito;
+    private int cantidadCreditos;
     @ManyToOne
-    @JoinColumn(name="matricula_asignada_id")
-    private Asignatura asignatura;   
+    @JoinColumn(name="id_asignatura")
+    private Asignatura asignatura;
+
+    @ManyToOne
+    @JoinColumn(name="id_estudiante")
+    private Estudiante estudiante;
+
+    @ManyToOne
+    @JoinColumn(name="id_horario")
+    private Horario horario;
+
 
     private static final long serialVersionUID =1L;
 }
